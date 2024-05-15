@@ -103,7 +103,7 @@ class _MyAppState extends State<MyApp> {
               themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
               theme: ThemeData(primaryColor: mainColor),
               darkTheme: ThemeData.dark(),
-              home: isFirstCall ? OnBoarding() : Splash());
+              home: isFirstCall ? OnBoarding() : OnBoarding());
         }); /* MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,

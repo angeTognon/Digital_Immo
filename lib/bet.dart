@@ -35,6 +35,7 @@ class _BetState extends State<Bet> {
     return Scaffold(
       // extendBody: true,
       bottomNavigationBar : CurvedNavigationBar(
+
         onTap: (index) => setState(() {
           this.index=index;
         }),

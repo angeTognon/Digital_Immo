@@ -42,24 +42,21 @@ class _PublierState extends State<Publier> {
   String dropdownvalue = 'Cliquez ici';
   final List<String> items = [
     'Cliquez ici',
-    'Chambre salon sanitaire',
+    'Entré couché simple',
+    'Entré couché sanitaire',
     'Chambre salon simple',
-    'Boutique',
-    'Villa',
+    'Chambre salon sanitaire',
     '2 Chambres salons simples',
-    'Maison',
     '2 Chambres salons sanitaires',
-    'Studio',
-    'Mini Studio',
+    '3 Chambres salons simples',
+    '3 Chambres salons sanitaires',
+    'Boutique',
+    'Bureau',
     "Appartement Meublé",
-    'Chambre Simple',
-    'Chambre Toilette',
-    'Chambre Cuisine',
-    'Chambre Meublée',
-    'Immeuble',
+    'Maison',
     'Villa',
-    'Bureau et commerce',
-    'Terrain',
+    'Immeuble',
+    'Parcelle',
   ];
 
   final phoneController = TextEditingController();
@@ -675,7 +672,7 @@ class _PublierState extends State<Publier> {
                             keyboardType: TextInputType.phone,
                             controller: phoneController,
                             decoration: InputDecoration.collapsed(
-                                hintText: "Ex : Grand Yoff",
+                                hintText: "Ex : 55555555",
                                 hintStyle: TextStyle(
                                     fontSize: 15, fontWeight: FontWeight.bold)),
                           ),

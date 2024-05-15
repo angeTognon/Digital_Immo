@@ -33,8 +33,8 @@ class _SplashState extends State<Splash> {
       width: MediaQuery.of(context).size.width,
       child: Center(
         child: Container(
-          height: 250,
-          width: 250,
+          height: 200,
+          width: 200,
           child: Image.asset(
             "assets/images/AF.png",
             scale: 2,

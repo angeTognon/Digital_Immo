@@ -402,36 +402,7 @@ MAB(BuildContext context, Widget wid) {
                                   color: Color.fromARGB(255, 190, 7, 56))
                             ],
                           )),
-                      PopupMenuItem<String>(
-                          value: '1',
-                          onTap: () async {
-                            final prefs = await SharedPreferences.getInstance();
-                            eya = false;
-                            prefs.setBool('isConnected', eya);
 
-                            Phoenix.rebirth(context);
-                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                backgroundColor:
-                                    const Color.fromARGB(255, 11, 71, 13),
-                                content: Text(
-                                  "Déconnexion réussie",
-                                  style: TextStyle(
-                                      fontFamily: 'normal2',
-                                      color: Colors.white),
-                                )));
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                'Déconnexion',
-                                style: TextStyle(
-                                    fontFamily: 'normal2', fontSize: 15),
-                              ),
-                              Icon(Icons.arrow_forward_ios,
-                                  color: Color.fromARGB(255, 190, 7, 56))
-                            ],
-                          )),
                       PopupMenuItem<String>(
                           value: '1',
                           onTap: () => Navigator.push(
@@ -530,7 +501,37 @@ MAB(BuildContext context, Widget wid) {
                               Icon(Icons.arrow_forward_ios,
                                   color: Color.fromARGB(255, 190, 7, 56))
                             ],
-                          ))
+                          )),
+                      PopupMenuItem<String>(
+                          value: '1',
+                          onTap: () async {
+                            final prefs = await SharedPreferences.getInstance();
+                            eya = false;
+                            prefs.setBool('isConnected', eya);
+
+                            Phoenix.rebirth(context);
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                backgroundColor:
+                                const Color.fromARGB(255, 11, 71, 13),
+                                content: Text(
+                                  "Déconnexion réussie",
+                                  style: TextStyle(
+                                      fontFamily: 'normal2',
+                                      color: Colors.white),
+                                )));
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text(
+                                'Déconnexion',
+                                style: TextStyle(
+                                    fontFamily: 'normal2', fontSize: 15),
+                              ),
+                              Icon(Icons.arrow_forward_ios,
+                                  color: Color.fromARGB(255, 190, 7, 56))
+                            ],
+                          )),
                     ]);
               },
               child: Icon(
@@ -696,7 +697,7 @@ Box2(BuildContext context, String path, titre, titre2, montant, int id,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    width: 190,
+                    width: 150,
                     child: Text(
                       titre,
                       style: TextStyle(fontFamily: 'normal'),
@@ -707,7 +708,7 @@ Box2(BuildContext context, String path, titre, titre2, montant, int id,
                   ), */
                   h(10),
                   Container(
-                    width: 200,
+                    width: 150,
                     child: Text(
                       titre2,
                       style: TextStyle(fontFamily: 'normal2'),
@@ -719,7 +720,7 @@ Box2(BuildContext context, String path, titre, titre2, montant, int id,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    padding: EdgeInsets.only(left: 20, right: 18),
+                    padding: EdgeInsets.only(left: 5, right: 5),
                     height: 40,
                     decoration: BoxDecoration(
                         color: Color.fromARGB(137, 255, 153, 0),
@@ -748,7 +749,7 @@ Box2(BuildContext context, String path, titre, titre2, montant, int id,
                           ));
                     },
                     child: Container(
-                      padding: EdgeInsets.only(left: 25, right: 25),
+                      padding: EdgeInsets.only(left: 5, right: 5),
                       height: 30,
                       decoration: BoxDecoration(color: mainColor),
                       child: Center(

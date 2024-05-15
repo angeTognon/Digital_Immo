@@ -42,23 +42,21 @@ class Accueil extends StatefulWidget {
 
 class _AccueilState extends State<Accueil> {
   final List<String> searchElements = [
-    'Chambre salon sanitaire',
+    'Entré couché simple',
+    'Entré couché sanitaire',
     'Chambre salon simple',
-    'Boutique',
-    'Villa',
+    'Chambre salon sanitaire',
     '2 Chambres salons simples',
-    'Maison',
     '2 Chambres salons sanitaires',
-    'Studio',
-    'Mini Studio',
+    '3 Chambres salons simple',
+    '3 Chambres salons sanitaires',
+   'Boutique',
+    'Bureau',
     "Appartement Meublé",
-    'Chambre Simple',
-    'Chambre Toilette',
-    'Chambre Cuisine',
-    'Chambre Meublée',
+    'Maison',
+    'Villa',
     'Immeuble',
-    'Bureau et commerce',
-    'Terrain',
+    'Parcelle',
   ];
 
   String selectedElement = '';
@@ -682,36 +680,7 @@ class _AccueilState extends State<Accueil> {
                                   color: Color.fromARGB(255, 190, 7, 56))
                             ],
                           )),
-                      PopupMenuItem<String>(
-                          value: '1',
-                          onTap: () async {
-                            final prefs = await SharedPreferences.getInstance();
-                            eya = false;
-                            prefs.setBool('isConnected', eya);
 
-                            Phoenix.rebirth(context);
-                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                backgroundColor:
-                                    const Color.fromARGB(255, 11, 71, 13),
-                                content: Text(
-                                  "Déconnexion réussie",
-                                  style: TextStyle(
-                                      fontFamily: 'normal2',
-                                      color: Colors.white),
-                                )));
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                'Déconnexion',
-                                style: TextStyle(
-                                    fontFamily: 'normal2', fontSize: 15),
-                              ),
-                              Icon(Icons.arrow_forward_ios,
-                                  color: Color.fromARGB(255, 190, 7, 56))
-                            ],
-                          )),
                       PopupMenuItem<String>(
                           value: '1',
                           onTap: () => Navigator.push(
@@ -810,7 +779,37 @@ class _AccueilState extends State<Accueil> {
                               Icon(Icons.arrow_forward_ios,
                                   color: Color.fromARGB(255, 190, 7, 56))
                             ],
-                          ))
+                          )),
+                      PopupMenuItem<String>(
+                          value: '1',
+                          onTap: () async {
+                            final prefs = await SharedPreferences.getInstance();
+                            eya = false;
+                            prefs.setBool('isConnected', eya);
+
+                            Phoenix.rebirth(context);
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                backgroundColor:
+                                const Color.fromARGB(255, 11, 71, 13),
+                                content: Text(
+                                  "Déconnexion réussie",
+                                  style: TextStyle(
+                                      fontFamily: 'normal2',
+                                      color: Colors.white),
+                                )));
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text(
+                                'Déconnexion',
+                                style: TextStyle(
+                                    fontFamily: 'normal2', fontSize: 15),
+                              ),
+                              Icon(Icons.arrow_forward_ios,
+                                  color: Color.fromARGB(255, 190, 7, 56))
+                            ],
+                          )),
                     ]);
               },
               child: Icon(
@@ -903,6 +902,7 @@ class _AccueilState extends State<Accueil> {
                                   color: Color.fromARGB(255, 190, 7, 56))
                             ],
                           )),
+
                       PopupMenuItem<String>(
                           value: '1',
                           onTap: () {
@@ -923,7 +923,37 @@ class _AccueilState extends State<Accueil> {
                               Icon(Icons.arrow_forward_ios,
                                   color: Color.fromARGB(255, 190, 7, 56))
                             ],
-                          ))
+                          )),
+                      PopupMenuItem<String>(
+                          value: '1',
+                          onTap: () async {
+                            final prefs = await SharedPreferences.getInstance();
+                            eya = false;
+                            prefs.setBool('isConnected', eya);
+
+                            Phoenix.rebirth(context);
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                backgroundColor:
+                                const Color.fromARGB(255, 11, 71, 13),
+                                content: Text(
+                                  "Déconnexion réussie",
+                                  style: TextStyle(
+                                      fontFamily: 'normal2',
+                                      color: Colors.white),
+                                )));
+                          },
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: const [
+                              Text(
+                                'Déconnexion',
+                                style: TextStyle(
+                                    fontFamily: 'normal2', fontSize: 15),
+                              ),
+                              Icon(Icons.arrow_forward_ios,
+                                  color: Color.fromARGB(255, 190, 7, 56))
+                            ],
+                          )),
                     ]);
               },
               child: Icon(
@@ -1087,25 +1117,21 @@ class _AccueilState extends State<Accueil> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        Box1("assets/images/cssa.jpg",
-                            "Chambre salon sanitaire"),
-                        Box1("assets/images/cssi.jpg", "Chambre salon simple"),
+                        Box1("assets/images/cssi.jpg", "Entré couché simple"),
+                        Box1("assets/images/cssi.jpg", "Entré couché sanitaire"),
+                        Box1("assets/images/cssa.jpg", "Chambre salon simple"),
+                        Box1("assets/images/cssa.jpg", "Chambre salon sanitaire"),
+                        Box1("assets/images/cssa2.jpg", "2 Chambres salons simples"),
+                        Box1("assets/images/studio.png","2 Chambres salons sanitaires"),
+                        Box1("assets/images/studio.png","3 Chambres salons simples"),
+                        Box1("assets/images/studio.png","3 Chambres salons sanitaires"),
                         Box1("assets/images/maison.png", "Boutique"),
+                        Box1("assets/images/x1.png", "Bureau"),
+                        Box1("assets/images/appart.png", "Appartement Meublé"),
                         Box1("assets/images/maison.png", "Maison"),
                         Box1("assets/images/villa.png", "Villa"),
-                        Box1("assets/images/cssa2.jpg",
-                            "2 Chambres salons simples"),
-                        Box1("assets/images/studio.jpg", "Studio"),
-                        Box1("assets/images/studio.png",
-                            "2 Chambres salons sanitaires"),
-                        Box1("assets/images/x1.png", "Mini Studio"),
-                        Box1("assets/images/appart.png", "Appartement"),
-                        Box1("assets/images/terrain.png", "Terrain"),
-                        Box1("assets/images/chambreS.png", "Chambre Simple"),
-                        Box1("assets/images/x3.png", "Chambre Toilette"),
-                        Box1("assets/images/x4.png", "Chambre Cuisine"),
-                        Box1("assets/images/x5.png", "Chambre Meublée"),
-                        Box1("assets/images/x1.png", "Bureau et commerce"),
+                        Box1("assets/images/villa.png", "Immeuble"),
+                        Box1("assets/images/terrain.png", "Parcelle"),
                         w(20),
                       ],
                     ),

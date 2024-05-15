@@ -919,7 +919,7 @@ class _DetailsState extends State<Details> {
                                           width: 50,
                                           padding: EdgeInsets.only(left: 10),
                                           decoration: BoxDecoration(
-                                              color: mainColor2,
+                                              color: mainColor,
                                               borderRadius:
                                                   BorderRadius.circular(20)),
                                           child: Center(
@@ -938,7 +938,7 @@ class _DetailsState extends State<Details> {
                                         width: 15,
                                         decoration: BoxDecoration(
                                             color: i == 0
-                                                ? mainColor2
+                                                ? mainColor
                                                 : Colors.grey,
                                             borderRadius:
                                                 BorderRadius.circular(25)),
@@ -949,7 +949,7 @@ class _DetailsState extends State<Details> {
                                         width: 15,
                                         decoration: BoxDecoration(
                                             color: i == 1
-                                                ? mainColor2
+                                                ? mainColor
                                                 : Colors.grey,
                                             borderRadius:
                                                 BorderRadius.circular(25)),
@@ -960,7 +960,7 @@ class _DetailsState extends State<Details> {
                                         width: 15,
                                         decoration: BoxDecoration(
                                             color: i == 2
-                                                ? mainColor2
+                                                ? mainColor
                                                 : Colors.grey,
                                             borderRadius:
                                                 BorderRadius.circular(25)),
@@ -971,7 +971,7 @@ class _DetailsState extends State<Details> {
                                         width: 15,
                                         decoration: BoxDecoration(
                                             color: i == 3
-                                                ? mainColor2
+                                                ? mainColor
                                                 : Colors.grey,
                                             borderRadius:
                                                 BorderRadius.circular(25)),
@@ -982,7 +982,7 @@ class _DetailsState extends State<Details> {
                                         width: 15,
                                         decoration: BoxDecoration(
                                             color: i == 4
-                                                ? mainColor2
+                                                ? mainColor
                                                 : Colors.grey,
                                             borderRadius:
                                                 BorderRadius.circular(25)),
@@ -993,7 +993,7 @@ class _DetailsState extends State<Details> {
                                         width: 15,
                                         decoration: BoxDecoration(
                                             color: i == 5
-                                                ? mainColor2
+                                                ? mainColor
                                                 : Colors.grey,
                                             borderRadius:
                                                 BorderRadius.circular(25)),
@@ -1004,7 +1004,7 @@ class _DetailsState extends State<Details> {
                                         width: 15,
                                         decoration: BoxDecoration(
                                             color: i == 6
-                                                ? mainColor2
+                                                ? mainColor
                                                 : Colors.grey,
                                             borderRadius:
                                                 BorderRadius.circular(25)),
@@ -1032,7 +1032,7 @@ class _DetailsState extends State<Details> {
                                           width: 50,
                                           padding: EdgeInsets.only(right: 0),
                                           decoration: BoxDecoration(
-                                              color: mainColor2,
+                                              color: mainColor,
                                               borderRadius:
                                                   BorderRadius.circular(20)),
                                           child: Center(
@@ -1201,7 +1201,7 @@ class _DetailsState extends State<Details> {
                                               decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(15),
-                                                  color: mainColor2),
+                                                  color: mainColor),
                                               child: Center(
                                                   child: Text(
                                                 "Envoyer",
@@ -1245,7 +1245,7 @@ class _DetailsState extends State<Details> {
                                                 "${snapshot.data![index]['prix']} FCFA / Mois",
                                                 style: TextStyle(
                                                     fontFamily: 'normal',
-                                                    color: mainColor2,
+                                                    color: mainColor,
                                                     fontWeight: FontWeight.bold,
                                                     fontSize: 15),
                                               ),
@@ -1468,7 +1468,7 @@ class _DetailsState extends State<Details> {
                                                               border: Border.all(
                                                                   width: 3,
                                                                   color:
-                                                                      mainColor2)),
+                                                                      mainColor)),
                                                           padding:
                                                               EdgeInsets.only(
                                                                   top: 10,
@@ -1638,7 +1638,7 @@ class _DetailsState extends State<Details> {
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               15),
-                                                      color: mainColor2),
+                                                      color: mainColor),
                                                   child: Center(
                                                       child: Text(
                                                     "Envoyer Commentaire",

@@ -149,62 +149,83 @@ class _MesPubsState extends State<MesPubs> {
             )),
         body: SingleChildScrollView(
           padding: EdgeInsets.all(20),
-          child: Column(
-            children: [
-              Container(
-                margin: EdgeInsets.all(10),
-                height: MediaQuery.of(context).size.height,
-                child: FutureBuilder(
-                  future: mesPubs(),
-                  builder: (BuildContext context, AsyncSnapshot snapshot) {
-                    if (snapshot.hasError) {
-                      return Center(
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: FutureBuilder(
+              future: mesPubs(),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                if (snapshot.hasError) {
+                  return Center(
+                    child: Text(
+                        "Erreur de chargement. Veuillez relancer l'application"),
+                  );
+                }
+                if (snapshot.hasData) {
+                  return snapshot.data.isEmpty
+                      ? Column(
+                    children: [
+                      h(20),
+                      Icon(
+                        Icons.safety_check_rounded,
+                        size: 100,
+                        color: mainColor,
+                      ),
+                      h(20),
+                      Container(
+                        margin: EdgeInsets.only(left: 20, right: 20),
                         child: Text(
-                            "Erreur de chargement. Veuillez relancer l'application"),
-                      );
-                    }
-                    if (snapshot.hasData) {
-                      return Column(
-                        children: [
-                          Text(
-                            "Cliquez sur le botton SUPPRIMER pour supprimer votre publication.\nAttention !! Cette action est irréversible",
-                            style: TextStyle(fontSize: 14, fontFamily: 'normal'),
-                            textAlign: TextAlign.center,
-                          ),
-                          ListView.builder(
-                            itemCount: snapshot.data.length,
-                            itemBuilder: (context, index) {
-                              return BoxMesPubs(
-                                snapshot.data![index]['linkss'],
-                                snapshot.data![index]['pays'],
-                                snapshot.data![index]['ville'],
-                                snapshot.data![index]['quartier'],
-                                snapshot.data![index]['prix'],
-                                index,
-                                snapshot.data![index]['id'],
-                              );
-                            },
-                          ),
-                        ],
-                      );
-                    }
-                    return Container(
-                        height: 50,
-                        width: 50,
-                        child: Center(
-                            child: Lottie.asset(
-                                "assets/images/auto_loading.json",
-                                height: 150)));
-                  },
-                ),
-              ),
-            ],
+                          "Oups, aucune  publication pour l'instant ",
+                          style: TextStyle(fontSize: 17),
+                          textAlign: TextAlign.center,
+                        ),
+                      ),
+                    ],
+                  ): Column(
+                    children: [
+                      Text(
+                        "Cliquez sur le botton SUPPRIMER pour supprimer votre publication.\nAttention !! Cette action est irréversible",
+                        style: TextStyle(fontSize: 14, fontFamily: 'normal'),
+                        textAlign: TextAlign.center,
+                      ),
+                      Container(
+
+                        height: MediaQuery.of(context).size.height,
+                        width: MediaQuery.of(context).size.width,
+                        child: ListView.builder(
+                          itemCount: snapshot.data.length,
+                          itemBuilder: (context, index) {
+                            return BoxMesPubs(
+                              snapshot.data![index]['linkss'],
+                              snapshot.data![index]['pays'],
+                              snapshot.data![index]['ville'],
+                              snapshot.data![index]['quartier'],
+                              snapshot.data![index]['prix'],
+                              index,
+                              snapshot.data![index]['id'],
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  );
+                }
+                return Container(
+                    height: 50,
+                    width: 50,
+                    child: Center(
+                        child: Lottie.asset(
+                            "assets/images/auto_loading.json",
+                            height: 150)));
+              },
+            ),
           ),
         ));
   }
 
   BoxMesPubs(String path, pays, ville, quartier, prix, int number, id) {
     return Container(
+      height: 200,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(border: Border.all(color: mainColor)),
       margin: EdgeInsets.only(bottom: 10, top: 10),
@@ -221,22 +242,27 @@ class _MesPubsState extends State<MesPubs> {
               children: [
                 Column(
                   children: [
-                    ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            // primary: const Color.fromARGB(255, 137, 28, 20)
-                            ),
-                        onPressed: () {
-                          delete(id);
-                        },
-                        child: Row(
-                          children: [
-                            Text("Supprimer",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontFamily: 'normal'))
-                          ],
-                        )),
+                    InkWell(
+                      onTap : (){
+      delete(id);
+
+      },
+                      child: Container(
+                        height: 30,
+                        padding: EdgeInsets.only(left: 20, right: 20),
+                        decoration: BoxDecoration(
+                          color: mainColor
+                        ),
+                        child : Center(
+                          child: Text("Supprimer",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 13,
+                                  fontFamily: 'normal')),
+                        )
+                      ),
+                    ),
+
                   ],
                 )
               ],
