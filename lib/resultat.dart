@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:app_feishola/details.dart';
 import 'package:flutter/material.dart';
 import 'package:app_feishola/wid.dart';
 import 'package:http/http.dart' as http;
@@ -204,7 +205,14 @@ class _ResultatState extends State<Resultat> {
                           itemBuilder: (context, index) {
                             return Column(
                               children: [
-                                Box2(
+                                ResultBox("${snapshot.data![index]['linkss']}",
+                                    "${snapshot.data![index]['ville']}",
+                                    "${snapshot.data![index]['titre']}",
+                                  "${snapshot.data![index]['prix']} FCFA",
+                                  "Publiée le ${snapshot.data![index]['temps']}",
+                                  int.parse("${snapshot.data![index]['id']}"),
+                                )
+                                /*Box2(
                                   context,
                                   "${snapshot.data![index]['linkss']}",
                                   "${snapshot.data![index]['titre']}",
@@ -212,7 +220,7 @@ class _ResultatState extends State<Resultat> {
                                   "${snapshot.data![index]['prix']}",
                                   int.parse("${snapshot.data![index]['id']}"),
                                   "${snapshot.data![index]['ville']}",
-                                ),
+                                ),*/
                               ],
                             );
                           });
@@ -227,6 +235,146 @@ class _ResultatState extends State<Resultat> {
             ),
           ),
           h(150)
+        ],
+      ),
+    );
+  }
+  ResultBox(String imgLink, ville, titre,prix, date,id){
+    return Container(
+      // padding: EdgeInsets.all(10),
+      margin: EdgeInsets.only(left: 15, right: 15,top:15),
+      height: 300, //200
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          // color: Colors.black,
+          image: DecorationImage(
+              image: NetworkImage(
+               imgLink
+              ),
+              fit: BoxFit.cover)),
+      child: Stack(
+        children: [
+          Container(
+            height: 300, //200
+            width:  MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Color.fromARGB(90, 0, 0, 0),
+            ),
+          ),
+          Positioned(
+            top: 30,left: 20,
+            child: Text(
+              date,
+              style: TextStyle(
+                  fontSize: 15,
+                  fontFamily: 'normal',
+                  color: Colors.white),
+              textAlign: TextAlign.start,
+            ),
+          ),
+          Positioned(
+            right: 20,
+            top: 20,
+            child: Row(
+              mainAxisAlignment:
+              MainAxisAlignment.end,
+              children: [
+                Container(
+                  padding: EdgeInsets.only(left: 10, right: 10),
+                  height: 40,
+                  decoration: BoxDecoration(
+                      borderRadius:
+                      BorderRadius.circular(10),
+                      color: mainColor2),
+                  child: Center(
+                    child: Text(
+                      ville,
+                      style: TextStyle(
+                          fontFamily: 'normal',
+                          color: Color.fromARGB(
+                              226, 255, 255, 255)),
+                    ),
+                  ),
+                ),
+
+              ],
+            ),
+          ),
+          h(12),
+          Positioned(
+            bottom: 0,
+            child: Container(
+              padding: EdgeInsets.only(left: 15,top: 15),
+              height: 70,
+              width:  MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                  color: mainColor2.withOpacity(0.8),
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(20),
+                      bottomRight:
+                      Radius.circular(20))),
+              child : Row(
+                children: [
+                  Column(crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        titre,
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontFamily: 'normal',
+                            color: Colors.white),
+                        textAlign: TextAlign.start,
+                      ),
+                      Text(
+                        prix,
+                        style: TextStyle(
+                            fontSize: 17,
+                            fontFamily: 'normal',
+                            color: Colors.amber),
+                        textAlign: TextAlign.start,
+                      ),
+                    ],
+                  ),
+                  w(40),
+                  Column(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => Details(
+                                  imgPath: imgLink,
+                                  type: titre,
+                                  id: id,
+                                  ville: ville,
+                                  fav: false,
+                                ),
+                              ));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.only(left: 5, right: 5),
+                          height: 30,
+                          decoration: BoxDecoration(color: mainColor),
+                          child: Center(
+                            child: Text(
+                              "Consulter",
+                              style: TextStyle(
+                                  color: Colors.white, fontFamily: 'normal2'),
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              )
+            ),
+          ),
+
+
         ],
       ),
     );

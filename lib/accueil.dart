@@ -1121,16 +1121,12 @@ class _AccueilState extends State<Accueil> {
                         Box1("assets/images/cssi.jpg", "Entré couché sanitaire"),
                         Box1("assets/images/cssa.jpg", "Chambre salon simple"),
                         Box1("assets/images/cssa.jpg", "Chambre salon sanitaire"),
-                        Box1("assets/images/cssa2.jpg", "2 Chambres salons simples"),
                         Box1("assets/images/studio.png","2 Chambres salons sanitaires"),
-                        Box1("assets/images/studio.png","3 Chambres salons simples"),
                         Box1("assets/images/studio.png","3 Chambres salons sanitaires"),
                         Box1("assets/images/maison.png", "Boutique"),
                         Box1("assets/images/x1.png", "Bureau"),
                         Box1("assets/images/appart.png", "Appartement Meublé"),
-                        Box1("assets/images/maison.png", "Maison"),
                         Box1("assets/images/villa.png", "Villa"),
-                        Box1("assets/images/villa.png", "Immeuble"),
                         Box1("assets/images/terrain.png", "Parcelle"),
                         w(20),
                       ],
@@ -1197,174 +1193,13 @@ class _AccueilState extends State<Accueil> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.end,
                                         children: [
-                                          /* Container(
-                                            height: 50,
-                                            width: 50,
-                                            child: FutureBuilder(
-                                              future: getfavoris(),
-                                              builder: (BuildContext context,
-                                                  AsyncSnapshot snapshot) {
-                                                if (snapshot.hasError) {
-                                                  return Center(
-                                                    child: Text(
-                                                        "Erreur de chargement. Veuillez relancer l'application"),
-                                                  );
-                                                }
-                                                if (snapshot.hasData) {
-                                                  print(snapshot.data.length);
-                                                  return snapshot.data.isEmpty
-                                                      ? Container(
-                                                          height: 50,
-                                                          width: 50,
-                                                          color: Colors.white,
-                                                          child: InkWell(
-                                                            onTap: () {
-                                                              setState(() {
-                                                                favorisList[index] =
-                                                                    !favorisList[
-                                                                        index];
-                                                                if (favorisList[
-                                                                    index]) {
-                                                                  addFav(int.parse(
-                                                                      snapshot.data![
-                                                                              index]
-                                                                          ['id']));
-                                                                } else {
-                                                                  remove(int.parse(
-                                                                      snapshot.data![
-                                                                              index]
-                                                                          ['id']));
-                                                                }
-                                                              });
-                                                            },
-                                                            child: Container(
-                                                              padding:
-                                                                  EdgeInsets.only(
-                                                                      left: 10,
-                                                                      right: 10),
-                                                              height: 40,
-                                                              decoration: BoxDecoration(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              100),
-                                                                  color:
-                                                                      mainColor2),
-                                                              child: Center(
-                                                                  child: Icon(
-                                                                favorisList[index]
-                                                                    ? Icons.favorite
-                                                                    : Icons
-                                                                        .favorite_border,
-                                                                size: 30,
-                                                                color: favorisList[
-                                                                        index]
-                                                                    ? const Color
-                                                                        .fromARGB(
-                                                                        255,
-                                                                        158,
-                                                                        33,
-                                                                        24)
-                                                                    : const Color
-                                                                        .fromARGB(
-                                                                        255,
-                                                                        255,
-                                                                        255,
-                                                                        255),
-                                                              )),
-                                                            ),
-                                                          ))
-                                                      : ListView.builder(
-                                                          itemCount:
-                                                              snapshot.data.length,
-                                                          itemBuilder:
-                                                              (context, index) {
-                                                            return InkWell(
-                                                              onTap: () {
-                                                                setState(() {
-                                                                  favorisList[
-                                                                          index] =
-                                                                      !favorisList[
-                                                                          index];
-                                                                  if (favorisList[
-                                                                      index]) {
-                                                                    addFav(int.parse(
-                                                                        snapshot.data![
-                                                                                index]
-                                                                            [
-                                                                            'id']));
-                                                                  } else {
-                                                                    remove(int.parse(
-                                                                        snapshot.data![
-                                                                                index]
-                                                                            [
-                                                                            'id']));
-                                                                  }
-                                                                });
-                                                              },
-                                                              child: Container(
-                                                                padding:
-                                                                    EdgeInsets.only(
-                                                                        left: 10,
-                                                                        right: 10),
-                                                                height: 40,
-                                                                decoration: BoxDecoration(
-                                                                    borderRadius:
-                                                                        BorderRadius
-                                                                            .circular(
-                                                                                100),
-                                                                    color:
-                                                                        mainColor2),
-                                                                child: Center(
-                                                                    child: Icon(
-                                                                  favorisList[index]
-                                                                      ? Icons
-                                                                          .favorite
-                                                                      : Icons
-                                                                          .favorite_border,
-                                                                  size: 30,
-                                                                  color: favorisList[
-                                                                          index]
-                                                                      ? const Color
-                                                                          .fromARGB(
-                                                                          255,
-                                                                          158,
-                                                                          33,
-                                                                          24)
-                                                                      : const Color
-                                                                          .fromARGB(
-                                                                          255,
-                                                                          255,
-                                                                          255,
-                                                                          255),
-                                                                )),
-                                                              ),
-                                                            );
-                                                          },
-                                                        );
-                                                }
-                                                return Container(
-                                                    height: 50,
-                                                    width: 50,
-                                                    child: Center(
-                                                        child: Lottie.asset(
-                                                            "assets/images/auto_loading.json",
-                                                            height: 150)));
-                                              },
-                                            ),
-                                          ), */
+
                                           InkWell(
                                             onTap: () {
                                               setState(() {
                                                 favorisList[index] =
                                                     !favorisList[index];
-                                                /* if (favorisList[index]) {
-                                                  addFav(int.parse(
-                                                      snapshot.data![index]['id']));
-                                                } else {
-                                                  remove(int.parse(
-                                                      snapshot.data![index]['id']));
-                                                } */
+
                                               });
                                             },
                                             child: Container(

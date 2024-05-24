@@ -44,7 +44,7 @@ class _BetState extends State<Bet> {
         color: mainColor,
         height: 60,
         items: [
-    eya ? Icon(Icons.account_box,size: 35,color: Colors.white) : Icon(Icons.login,size: 35,color: Colors.white),
+    eya ? Icon(Icons.account_box,size: 35,color: Colors.white) : Icon(Icons.person,size: 35,color: Colors.white),
           Icon(Icons.phone,size: 35,color: Colors.white),
            Icon(Icons.home,size: 35,color: Colors.white),
           Icon(Icons.info,size: 35,color: Colors.white),

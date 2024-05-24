@@ -1,3 +1,4 @@
+import 'package:app_feishola/bet.dart';
 import 'package:app_feishola/inscription2.dart';
 import 'package:app_feishola/wid.dart';
 import 'package:flutter/material.dart';
@@ -103,7 +104,7 @@ class _MyAppState extends State<MyApp> {
               themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
               theme: ThemeData(primaryColor: mainColor),
               darkTheme: ThemeData.dark(),
-              home: isFirstCall ? OnBoarding() : OnBoarding());
+              home: isFirstCall ? Bet() : Bet());
         }); /* MaterialApp(
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,

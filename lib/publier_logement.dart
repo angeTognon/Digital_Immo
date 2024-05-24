@@ -849,325 +849,275 @@ class _PublierState extends State<Publier> {
                       ),
                       h(10),
                       Text(
-                        "10- Importez une photo du logement\n(PHOTO n°1)",
+                        "10- Ajoutez des Photos",
                         style: TextStyle(fontSize: 14, fontFamily: 'normal'),
                       ),
                       h(15),
-                      Container(
-                        padding: EdgeInsets.only(left: 10, right: 10),
-                        width: MediaQuery.of(context).size.width,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            border: Border.all(color: Colors.black38)),
-                        child: InkWell(
-                          onTap: () {
-                            pickImage();
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Cliquez ici pour importer"),
-                              Icon(Icons.photo)
-                            ],
-                          ),
-                        ),
-                      ),
-                      h(20),
-                      Container(
-                          //show image here after choosing image
-                          child: uploadimage == null
-                              ? Container()
-                              : //if uploadimage is null then show empty container
-                              Row(
+                      Wrap(runSpacing: 20,spacing: 2,
+                        children: [
+                          Container(
+                            height: 110,width: 116,
+                            decoration : BoxDecoration(
+                            border: Border.all(color: mainColor2,width: 3),
+                            borderRadius: BorderRadius.circular(12)
+                            ),
+                            //show image here after choosing image
+                              child: uploadimage == null
+                                  ? InkWell(
+                                onTap: () => pickImage(),
+                                    child: Center(
+                                      child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                                                                      children: [
+                                      Text('Ajouter photo principale',style: TextStyle(
+                                        fontFamily: "normal",color: mainColor2,fontSize: 12
+                                      ),textAlign : TextAlign.center),
+                                      h(5),
+                                      Icon(Icons.camera_enhance_rounded,color: mainColor2,)
+                                                                      ],
+                                                                    ),
+                                    ),
+                                  )
+                                  : //if uploadimage is null then show empty container
+                              InkWell(
+                                onTap: () => pickImage(),
+                                child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                        //elese show image here
-                                        child: SizedBox(
-                                            height: 150,
-                                            child: Image.file(
-                                                uploadimage!) //load image from file
-                                            )),
+                                      height: 110,width: 110,
+                                        decoration: BoxDecoration(
+                                          image: DecorationImage(image: FileImage(uploadimage!),fit: BoxFit.cover)
+                                        ),
+                                    ),
                                   ],
-                                )),
-                      h(10),
-                      Text(
-                        "11- PHOTO n°2",
-                        style: TextStyle(fontSize: 14, fontFamily: 'normal'),
-                      ),
-                      h(15),
-                      Container(
-                        padding: EdgeInsets.only(left: 10, right: 10),
-                        width: MediaQuery.of(context).size.width,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            border: Border.all(color: Colors.black38)),
-                        child: InkWell(
-                          onTap: () {
-                            pickImage2();
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Cliquez ici pour importer"),
-                              Icon(Icons.photo)
-                            ],
-                          ),
-                        ),
-                      ),
-                      h(20),
-                      Container(
-                          //show image here after choosing image
-                          child: uploadimage2 == null
-                              ? Container()
-                              : //if uploadimage is null then show empty container
-                              Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                        //elese show image here
-                                        child: SizedBox(
-                                            height: 150,
-                                            child: Image.file(
-                                                uploadimage2!) //load image from file
-                                            )),
-                                  ],
-                                )),
-                      h(10),
-/* ******************************************** */
-                      h(10),
-                      Text(
-                        "12- PHOTO n°3",
-                        style: TextStyle(fontSize: 14, fontFamily: 'normal'),
-                      ),
-                      h(15),
-                      Container(
-                        padding: EdgeInsets.only(left: 10, right: 10),
-                        width: MediaQuery.of(context).size.width,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            border: Border.all(color: Colors.black38)),
-                        child: InkWell(
-                          onTap: () {
-                            pickImage3();
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Cliquez ici pour importer"),
-                              Icon(Icons.photo)
-                            ],
-                          ),
-                        ),
-                      ),
-                      h(20),
-                      Container(
-                          //show image here after choosing image
-                          child: uploadimage3 == null
-                              ? Container()
-                              : //if uploadimage is null then show empty container
-                              Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                        //elese show image here
-                                        child: SizedBox(
-                                            height: 150,
-                                            child: Image.file(
-                                                uploadimage3!) //load image from file
-                                            )),
-                                  ],
-                                )),
-                      h(10),
+                                ),
+                              )),
 
-                      /* ******************************************** */
-                      h(10),
-                      Text(
-                        "13- PHOTO n°4",
-                        style: TextStyle(fontSize: 14, fontFamily: 'normal'),
-                      ),
-                      h(15),
-                      Container(
-                        padding: EdgeInsets.only(left: 10, right: 10),
-                        width: MediaQuery.of(context).size.width,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            border: Border.all(color: Colors.black38)),
-                        child: InkWell(
-                          onTap: () {
-                            pickImage4();
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Cliquez ici pour importer"),
-                              Icon(Icons.photo)
-                            ],
-                          ),
-                        ),
-                      ),
-                      h(20),
-                      Container(
-                          //show image here after choosing image
-                          child: uploadimage4 == null
-                              ? Container()
-                              : //if uploadimage is null then show empty container
-                              Row(
+                          Container(
+                              height: 110,width: 116,
+                              decoration : BoxDecoration(
+                                  border: Border.all(color: mainColor2,width: 3),
+                                  borderRadius: BorderRadius.circular(12)
+                              ),
+                              //show image here after choosing image
+                              child: uploadimage2 == null
+                                  ? InkWell(
+                                onTap: () => pickImage2(),
+                                child: Center(
+                                  child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text('Ajouter photo',style: TextStyle(
+                                          fontFamily: "normal",color: mainColor2,fontSize: 12
+                                      ),textAlign : TextAlign.center),
+                                      h(5),
+                                      Icon(Icons.camera_enhance_rounded,color: mainColor2,)
+                                    ],
+                                  ),
+                                ),
+                              )
+                                  : //if uploadimage is null then show empty container
+                              InkWell(
+                                onTap: () => pickImage2(),
+                                child: Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                        //elese show image here
-                                        child: SizedBox(
-                                            height: 150,
-                                            child: Image.file(
-                                                uploadimage4!) //load image from file
-                                            )),
+                                      height: 110,width: 110,
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(image: FileImage(uploadimage2!),fit: BoxFit.cover)
+                                      ),
+                                    ),
                                   ],
-                                )),
-                      h(10),
+                                ),
+                              )),
+                          Container(
+                              height: 110,width: 116,
+                              decoration : BoxDecoration(
+                                  border: Border.all(color: mainColor2,width: 3),
+                                  borderRadius: BorderRadius.circular(12)
+                              ),
+                              //show image here after choosing image
+                              child: uploadimage3 == null
+                                  ? InkWell(
+                                onTap: () => pickImage3(),
+                                child: Center(
+                                  child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text('Ajouter photo',style: TextStyle(
+                                          fontFamily: "normal",color: mainColor2,fontSize: 12
+                                      ),textAlign : TextAlign.center),
+                                      h(5),
+                                      Icon(Icons.camera_enhance_rounded,color: mainColor2,)
+                                    ],
+                                  ),
+                                ),
+                              )
+                                  : //if uploadimage is null then show empty container
+                              InkWell(
+                                onTap: () => pickImage3(),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: 110,width: 110,
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(image: FileImage(uploadimage3!),fit: BoxFit.cover)
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )),
+                          Container(
+                              height: 110,width: 116,
+                              decoration : BoxDecoration(
+                                  border: Border.all(color: mainColor2,width: 3),
+                                  borderRadius: BorderRadius.circular(12)
+                              ),
+                              //show image here after choosing image
+                              child: uploadimage4 == null
+                                  ? InkWell(
+                                onTap: () => pickImage4(),
+                                child: Center(
+                                  child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text('Ajouter photo',style: TextStyle(
+                                          fontFamily: "normal",color: mainColor2,fontSize: 12
+                                      ),textAlign : TextAlign.center),
+                                      h(5),
+                                      Icon(Icons.camera_enhance_rounded,color: mainColor2,)
+                                    ],
+                                  ),
+                                ),
+                              )
+                                  : //if uploadimage is null then show empty container
+                              InkWell(
+                                onTap: () => pickImage4(),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: 110,width: 110,
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(image: FileImage(uploadimage4!),fit: BoxFit.cover)
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )),
+                          Container(
+                              height: 110,width: 116,
+                              decoration : BoxDecoration(
+                                  border: Border.all(color: mainColor2,width: 3),
+                                  borderRadius: BorderRadius.circular(12)
+                              ),
+                              //show image here after choosing image
+                              child: uploadimage5 == null
+                                  ? InkWell(
+                                onTap: () => pickImage5(),
+                                child: Center(
+                                  child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text('Ajouter photo',style: TextStyle(
+                                          fontFamily: "normal",color: mainColor2,fontSize: 12
+                                      ),textAlign : TextAlign.center),
+                                      h(5),
+                                      Icon(Icons.camera_enhance_rounded,color: mainColor2,)
+                                    ],
+                                  ),
+                                ),
+                              )
+                                  : //if uploadimage is null then show empty container
+                              InkWell(
+                                onTap: () => pickImage5(),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: 110,width: 110,
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(image: FileImage(uploadimage5!),fit: BoxFit.cover)
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )),
+                          Container(
+                              height: 110,width: 116,
+                              decoration : BoxDecoration(
+                                  border: Border.all(color: mainColor2,width: 3),
+                                  borderRadius: BorderRadius.circular(12)
+                              ),
+                              //show image here after choosing image
+                              child: uploadimage6 == null
+                                  ? InkWell(
+                                onTap: () => pickImage6(),
+                                child: Center(
+                                  child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text('Ajouter photo',style: TextStyle(
+                                          fontFamily: "normal",color: mainColor2,fontSize: 12
+                                      ),textAlign : TextAlign.center),
+                                      h(5),
+                                      Icon(Icons.camera_enhance_rounded,color: mainColor2,)
+                                    ],
+                                  ),
+                                ),
+                              )
+                                  : //if uploadimage is null then show empty container
+                              InkWell(
+                                onTap: () => pickImage6(),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: 110,width: 110,
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(image: FileImage(uploadimage6!),fit: BoxFit.cover)
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )),
+                          Container(
+                              height: 110,width: 116,
+                              decoration : BoxDecoration(
+                                  border: Border.all(color: mainColor2,width: 3),
+                                  borderRadius: BorderRadius.circular(12)
+                              ),
+                              //show image here after choosing image
+                              child: uploadimage7 == null
+                                  ? InkWell(
+                                onTap: () => pickImage7(),
+                                child: Center(
+                                  child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text('Ajouter photo',style: TextStyle(
+                                          fontFamily: "normal",color: mainColor2,fontSize: 12
+                                      ),textAlign : TextAlign.center),
+                                      h(5),
+                                      Icon(Icons.camera_enhance_rounded,color: mainColor2,)
+                                    ],
+                                  ),
+                                ),
+                              )
+                                  : //if uploadimage is null then show empty container
+                              InkWell(
+                                onTap: () => pickImage7(),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: 110,width: 110,
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(image: FileImage(uploadimage7!),fit: BoxFit.cover)
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )),
+                        ],
+                      ),
 
-                      /* ******************************************** */
-                      h(10),
-                      Text(
-                        "14- PHOTO n°5",
-                        style: TextStyle(fontSize: 14, fontFamily: 'normal'),
-                      ),
-                      h(15),
-                      Container(
-                        padding: EdgeInsets.only(left: 10, right: 10),
-                        width: MediaQuery.of(context).size.width,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            border: Border.all(color: Colors.black38)),
-                        child: InkWell(
-                          onTap: () {
-                            pickImage5();
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Cliquez ici pour importer"),
-                              Icon(Icons.photo)
-                            ],
-                          ),
-                        ),
-                      ),
-                      h(20),
-                      Container(
-                          //show image here after choosing image
-                          child: uploadimage5 == null
-                              ? Container()
-                              : //if uploadimage is null then show empty container
-                              Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                        //elese show image here
-                                        child: SizedBox(
-                                            height: 150,
-                                            child: Image.file(
-                                                uploadimage5!) //load image from file
-                                            )),
-                                  ],
-                                )),
-                      h(10),
-                      /* ******************************************** */
-                      h(10),
-                      Text(
-                        "15- PHOTO n°6",
-                        style: TextStyle(fontSize: 14, fontFamily: 'normal'),
-                      ),
-                      h(15),
-                      Container(
-                        padding: EdgeInsets.only(left: 10, right: 10),
-                        width: MediaQuery.of(context).size.width,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            border: Border.all(color: Colors.black38)),
-                        child: InkWell(
-                          onTap: () {
-                            pickImage6();
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Cliquez ici pour importer"),
-                              Icon(Icons.photo)
-                            ],
-                          ),
-                        ),
-                      ),
-                      h(20),
-                      Container(
-                          //show image here after choosing image
-                          child: uploadimage6 == null
-                              ? Container()
-                              : //if uploadimage is null then show empty container
-                              Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                        //elese show image here
-                                        child: SizedBox(
-                                            height: 150,
-                                            child: Image.file(
-                                                uploadimage6!) //load image from file
-                                            )),
-                                  ],
-                                )),
-                      h(10),
-                      /* ******************************************** */
-                      h(10),
-                      Text(
-                        "16- PHOTO n°7",
-                        style: TextStyle(fontSize: 14, fontFamily: 'normal'),
-                      ),
-                      h(15),
-                      Container(
-                        padding: EdgeInsets.only(left: 10, right: 10),
-                        width: MediaQuery.of(context).size.width,
-                        height: 40,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(13),
-                            border: Border.all(color: Colors.black38)),
-                        child: InkWell(
-                          onTap: () {
-                            pickImage7();
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Cliquez ici pour importer"),
-                              Icon(Icons.photo)
-                            ],
-                          ),
-                        ),
-                      ),
-                      h(20),
-                      Container(
-                          //show image here after choosing image
-                          child: uploadimage7 == null
-                              ? Container()
-                              : //if uploadimage is null then show empty container
-                              Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Container(
-                                        //elese show image here
-                                        child: SizedBox(
-                                            height: 150,
-                                            child: Image.file(
-                                                uploadimage7!) //load image from file
-                                            )),
-                                  ],
-                                )),
-                      h(10),
                       h(20),
                       show
                           ? Row(
